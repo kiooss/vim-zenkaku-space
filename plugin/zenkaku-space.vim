@@ -1,6 +1,12 @@
 " Author: Kiooss Yang
 " Repository: https://github.com/kiooss/vim-zenkaku-space
 
+" Prevent loading the plugin multiple times
+if exists('g:loaded_zenkaku_space_plugin')
+    finish
+endif
+let g:loaded_zenkaku_space_plugin = 1
+
 autocmd FileType * call <SID>SetupAutoCommands()
 autocmd WinEnter,BufWinEnter * call <SID>SetupAutoCommands()
 autocmd ColorScheme * call <SID>ZenkakuSpaceInit()
